@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{serie.name}} - {{season.name}}{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5" style="MAX-WIDTH: 800PX;">
+    <a href="{{ path('app_serie',{slug:serie.slug}) }}" class="btn">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+    <div class="mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{season.image}}" alt="Series Image" class="img-fluid">
+            </div>
+            <div class="col-md-9">
+                <h2>{{serie.name}} - {{season.name}}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>{{season.synopsis}}</p>
+                    </div>
+                </div>
+                <div>
+                        <span class="badge rounded-pill text-bg-warning">{{season.imdbScore}} IMDB</span>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 summary">
+            <H2>Episodes Summary</H2>
+            {{season.summary|raw}}
+        </div>
+    </div>
+</div>
+{% endblock %}

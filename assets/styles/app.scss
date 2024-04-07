@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons";
+
+.alert {
+    position: fixed;
+    width: 90%;
+    right: 10px;
+    bottom: 10px;
+    z-index: 100000;
+    max-width: 400px;
+}

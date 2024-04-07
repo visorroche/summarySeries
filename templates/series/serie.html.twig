@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remember {{serie.name}}!{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5" style="MAX-WIDTH: 800PX;">
+    <a href="{{ path('app_home') }}" class="btn">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+    <div class="mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{serie.image}}" alt="Series Image" class="img-fluid">
+            </div>
+            <div class="col-md-9">
+                <h2>{{serie.name}}</h2>
+                <div class="mb-3">
+                    {% set categorys = serie.categorys|split(',') %}
+                    {% for category in categorys %}
+                        <span class="badge text-bg-light">{{category}}</span>
+                    {% endfor %}
+                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>{{serie.synopsis}}</p>
+                        </div>
+                    </div>
+                    <div>
+                            <span class="badge rounded-pill text-bg-warning">{{serie.imbd_score}} IMDB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <form method="get" action="{{ path('app_season_summary',{slug:serie.slug}) }}">
+                <div class="mb-3">
+                    <label for="season" class="form-label">What season do you want to remember?</label>
+                    <select class="form-select" id="season" name="season">
+                        {% for season in serie.seasons %}
+                            <option value="{{season.id}}">{{season.name}}</option>
+                        {% endfor %}
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Remember</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
