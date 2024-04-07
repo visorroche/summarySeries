@@ -57,7 +57,7 @@ Make sure you have the following software installed on your machine:
 
 2. Open the `.env` file and configure the necessary environment variables, such as database connection details and API keys.
 
-# Run the migrations to create the database tables
+### Run the migrations to create the database tables
 php bin/console doctrine:migrations:migrate
 
 ### Usage
@@ -70,7 +70,7 @@ php bin/console doctrine:migrations:migrate
 
 2. Access the application in your web browser at `http://localhost:8000`.
 
-### GET CREDENTIALS IN TMDB
+## GET CREDENTIALS IN TMDB
 
 1. Visit the TMDB website at https://www.themoviedb.org/.
 2. Sign in or create a new account if you don't have one already.
@@ -82,7 +82,7 @@ php bin/console doctrine:migrations:migrate
 8. Replace API_KEY_TMDB with the copied API key.
 9. Save the .env file.
 
-### GET CREDENTIALS IN OPEN.AI
+## GET CREDENTIALS IN OPEN.AI
 
 1. Visit the OpenAI website at https://www.openai.com/.
 2. Sign in or create a new account if you don't have one already.
