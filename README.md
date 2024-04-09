@@ -94,6 +94,36 @@ php bin/console doctrine:migrations:migrate
 7. Replace GPT_TOKEN with the copied API key.
 8. Save the .env file.
 
+# Using Docker
+
+If you want to use this project with Docker, you can do so using the Dockerfile and docker-compose.yml; just follow the steps below:
+1. Install Docker on your machine https://docs.docker.com/get-docker/ 
+2. Open the project directory in your terminal
+3. Create your image with the command: 
+```bash 
+docker-compose build
+```
+4. Start your image with the command: 
+```bash 
+docker-compose up -d
+```
+5. Acess the terminal of contair with the command:
+```bash 
+docker-compose exec app bash
+```
+6. Play migrations using the command:
+```bash 
+php bin/console doctrine:migrations:migrate
+```
+7. Open the application in your browser at http://localhost:8000/
+
+## Others Instructions
+
+If you want drop your container use the command:
+```bash 
+docker-compose down
+```
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
